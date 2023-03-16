@@ -10,29 +10,16 @@ namespace ConsoleApp34
     {
         static void Main(string[] args)
         {
-            //1 нахождение максимального элемента и его индекса в ОМ
-            int[] array = {8, -1, 4, 16, -5, 3};
-            int max = array[0];
-            int indexMax = 0;
-            int min = array[0];
-            int indexMin = 0;
-
-            for (int i = 1; i < array.Length; i++)
+            //4. дан курс рубля за каждый день в феврале месяца(случайным образом), рассчитать средний курс рубля, максимальный курс рубля и день с максимальным курсом, минимальный курс рубля и день с минимальным курсом
+            double[] array = new double[28];
+            Random rnd = new Random();
+            for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] > max)
-                {
-                    max = array[i];
-                    indexMax = i;
-                }
-                if (array[i] < min)
-                {
-                    min = array[i];
-                    indexMin = i;
-                }
-            }  
-            Console.WriteLine($"max={max}\t indexMAX={indexMax}");
-            Console.WriteLine($"min={min}\t indexMIN={indexMin}");
-            Console.Read();
+                array[i] = 55 + 10* rnd.NextDouble();
+                Console.WriteLine($"array[{i}]={array[i]:f2}");
+            }
+            
+                Console.Read();
         }
     }
 }
